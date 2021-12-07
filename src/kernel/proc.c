@@ -467,12 +467,6 @@ PRIVATE void sched()
   	    rdy_head[USER_Q] = rdy_head[USER_Q]->p_nextready;
         rdy_tail[USER_Q]->p_nextready = NIL_PROC;
      }
-   else {
-      	rdy_tail[USER_Q]->p_nextready = rdy_head[USER_Q];
-  	    rdy_tail[USER_Q] = rdy_head[USER_Q];
-  	    rdy_head[USER_Q] = rdy_head[USER_Q]->p_nextready;
-        rdy_tail[USER_Q]->p_nextready = NIL_PROC;
-   }
 
    pick_proc();
 }
